@@ -5,6 +5,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 
 use App\Models\Blog;
+use App\Models\Category;
 
 class BlogController extends BaseController
 {
@@ -17,6 +18,7 @@ class BlogController extends BaseController
 
     public function create(Request $req) {
         $data = [];
+        $data['categories'] = Category::all();
         return view('admin.blogs.create', ['data' => $data]);
     }
 

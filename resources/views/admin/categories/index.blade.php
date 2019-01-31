@@ -28,6 +28,7 @@
                                     <th>Id</th>
                                     <th>Nombre</th>
                                     <th>Creado</th>
+                                    <th># Blogs</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,6 +37,7 @@
                                 <td>{{ $category->id }}</td>
                                 <td>{{ $category->name }}</td>
                                 <td>{{ $category->created_at }}</td>
+                                <td>{{ $category->blogs->count() }}</td>
                             </tr>
                             @endforeach
                             </tbody>

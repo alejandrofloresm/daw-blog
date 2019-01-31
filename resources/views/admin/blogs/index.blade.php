@@ -27,6 +27,7 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Título</th>
+                                    <th>Categoría</th>
                                     <th>Creado</th>
                                 </tr>
                             </thead>
@@ -35,6 +36,7 @@
                             <tr>
                                 <td>{{ $blog->id }}</td>
                                 <td>{{ $blog->title }}</td>
+                                <td>{{ $blog->category->name }}</td>
                                 <td>{{ $blog->created_at }}</td>
                             </tr>
                             @endforeach
