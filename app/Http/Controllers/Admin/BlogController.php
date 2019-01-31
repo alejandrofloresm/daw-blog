@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
@@ -12,6 +12,6 @@ class BlogController extends BaseController
         $blogs = Blog::all();
         $data = [];
         $data['blogs'] = $blogs;
-        return view('blogs.index', ['data' => $data]);
+        return view('admin.blogs.index', ['data' => $data]);
     }
 }
