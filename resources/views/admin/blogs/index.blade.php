@@ -14,6 +14,11 @@
             <div class="box">
                 <div class="box-header with-border">
                     <h3 class="box-title">Índice de blogs</h3>
+                    <div class="pull-right box-tools">
+                        <a class="btn btn-info btn-sm" href="{{ route('admin.blogs.create') }}">
+                            Crear nuevo blog
+                        </a>
+                    </div>
                 </div>
                 <div class="box-body">
                     @if (!$data['blogs']->isEmpty())
@@ -36,7 +41,7 @@
                             </tbody>
                         </table>
                     @else
-                        <p>No existe ningún blog: crea uno aquí</p>
+                        <p>No existe ningún blog: <a href="{{ route('admin.blogs.create') }}">crea uno aquí</a></p>
                     @endif
                 </div>
             </div>

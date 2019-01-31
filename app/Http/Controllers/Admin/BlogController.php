@@ -14,4 +14,9 @@ class BlogController extends BaseController
         $data['blogs'] = $blogs;
         return view('admin.blogs.index', ['data' => $data]);
     }
+
+    public function create(Request $req) {
+        $data = [];
+        return view('admin.blogs.create', ['data' => $data]);
+    }
 }
