@@ -19,4 +19,11 @@ class BlogController extends BaseController
         $data = [];
         return view('admin.blogs.create', ['data' => $data]);
     }
+
+    public function store(Request $req) {
+        $blogData = $req->input('blog');
+        $blogData['content'] = trim($blogData['content']);
+        Blog::create($blogData);
+        return redirect()->route('admin.blogs.index');
+    }
 }
