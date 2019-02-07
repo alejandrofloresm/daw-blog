@@ -23,12 +23,12 @@ class CategoryController extends BaseController
     public function store(Request $req) {
         // For more info on how to do validation check:
         // https://laravel.com/docs/master/validation
-        $categoryData = $req->validate([
+        $validatedData = $req->validate([
             'category.name' => 'required'
         ],[
             'category.name.required' => 'El nombre de la categoría es requerido'
         ]);
-        Category::create($categoryData);
+        Category::create($validatedData['category']);
         return redirect()->route('admin.categories.index');
     }
 }
